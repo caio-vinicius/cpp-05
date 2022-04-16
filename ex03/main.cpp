@@ -23,6 +23,14 @@ int intern(void) {
         Intern intern;
         Form *form;
 
+        form = intern.makeForm("robotomy request", "Bender");
+        if (form)
+            delete form;
+    }
+    {
+        Intern intern;
+        Form *form;
+
         form = intern.makeForm("robotomy request", "signature line");
         if (form)
             delete form;
