@@ -57,62 +57,6 @@ const char *Bureaucrat::GradeTooLowException::error() const {
     return "You tried to use a very low grade: values must be between 1 and 150.";
 }
 
-Bureaucrat Bureaucrat::operator++() {
-    Bureaucrat bureaucrat;
-    unsigned char _grade;
-
-    _grade = grade;
-    try {
-        bureaucratGradeException(--_grade);
-        bureaucrat.grade = --grade;
-    } catch (const char *error) {
-        std::cerr << error << std::endl;
-    }
-    return (bureaucrat);
-}
-
-Bureaucrat Bureaucrat::operator++(int) {
-    Bureaucrat bureaucrat;
-    unsigned char _grade;
-
-    _grade = grade;
-    try {
-        bureaucratGradeException(--_grade);
-        bureaucrat.grade = grade--;
-    } catch (const char *error) {
-        std::cerr << error << std::endl;
-    }
-    return (bureaucrat);
-}
-
-Bureaucrat Bureaucrat::operator--() {
-    Bureaucrat bureaucrat;
-    unsigned char _grade;
-
-    _grade = grade;
-    try {
-        bureaucratGradeException(++_grade);
-        bureaucrat.grade = ++grade;
-    } catch (const char *error) {
-        std::cerr << error << std::endl;
-    }
-    return (bureaucrat);
-}
-
-Bureaucrat Bureaucrat::operator--(int) {
-    Bureaucrat bureaucrat;
-    unsigned char _grade;
-
-    _grade = grade;
-    try {
-        bureaucratGradeException(++_grade);
-        bureaucrat.grade = grade++;
-    } catch (const char *error) {
-        std::cerr << error << std::endl;
-    }
-    return (bureaucrat);
-}
-
 void Bureaucrat::incrementGrade(void) {
     unsigned char _grade;
 
