@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const &src) {
     *this = src;
 }
 
-void bureaucratGradeException(unsigned char grade) {
+static void bureaucratGradeException(unsigned char grade) {
     try {
         if (grade < MIN_GRADE)
             throw Bureaucrat::GradeTooHighException();
